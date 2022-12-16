@@ -1,4 +1,3 @@
-import { resolve } from "parcel-bundler/lib/utils/localRequire";
 import "./styles.css";
 // Task 2: Create a guessing game.
 
@@ -50,13 +49,13 @@ function continuePlaying(){
 function playGame(){
   enterNumber()
   .then((result)=>{
-    alert(`Random Number: ${result.randomNumber}, your score: ${result.score}`)
+    alert(`Random Number: ${result.randomNumber}, your score: ${result.points}`)
   
   
     continuePlaying()
     .then((result)=>{
       if(result){
-        enterNumber()
+        playGame()
       }else{
         alert("Thank you for playing! Game ends.")
       }
